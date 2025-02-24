@@ -4,5 +4,6 @@
     "stylelint-config-standard",
     "stylelint-config-sass-guidelines",
     "stylelint-config-styled-components"
-  ]
+  ],
+  "ignoreFiles": ["**/*.tsx", "**/*.ts"]
 }
