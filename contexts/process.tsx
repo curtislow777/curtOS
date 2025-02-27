@@ -1,16 +1,16 @@
 import type { FC, ReactNode } from 'react';
-import { createContext,useState } from 'react';
-import type { Process } from 'types/components/utils/processDirectory';
+import { createContext, useState } from 'react';
+import type { Processes } from 'types/components/utils/processDirectory';
 import processDirectory from 'utils/processDirectory';
 
 type ProcessContextState = {
-  processes: Record<string, Process>;
+  processes: Processes;
 };
 
 const ProcessContext = createContext<ProcessContextState | null>(null);
 
 export const ProcessProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [processes] = useState<Record<string, Process>>(processDirectory);
+  const [processes] = useState(processDirectory);
 
   return (
     <ProcessContext.Provider value={{ processes }}>
