@@ -1,14 +1,19 @@
+import Window from 'components/system/Window';
 import { ProcessConsumer } from 'contexts/process';
 import type { FC } from 'react';
 
 const ProcessLoader: FC = () => (
   <ProcessConsumer>
-    {(context) =>
-      context
-        ? Object.entries(context.processes).map(([id, { Component }]) => (
-            <Component key={id} />
-          ))
-        : null
+    {({ processes }) =>
+      Object.entries(processes).map(([id, { Component, hasWindow }]) =>
+        hasWindow ? (
+          <Window key={id}>
+            <Component />
+          </Window>
+        ) : (
+          <Component key={id} />
+        )
+      )
     }
   </ProcessConsumer>
 );
