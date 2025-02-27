@@ -1,7 +1,7 @@
 import { ProcessConsumer } from 'contexts/process';
 import type { FC } from 'react';
 
-const WindowManager: FC = () => (
+const ProcessLoader: FC = () => (
   <ProcessConsumer>
     {(context) =>
       context
@@ -13,4 +13,4 @@ const WindowManager: FC = () => (
   </ProcessConsumer>
 );
 
-export default WindowManager;
+export default ProcessLoader;
