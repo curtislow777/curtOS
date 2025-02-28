@@ -1,4 +1,4 @@
-import ProcessLoader from 'components/system/ProcessLoader'; // Default import
+import ProcessLoader from 'components/system/ProcessLoader';
 import { ProcessProvider } from 'contexts/process'; // Default import
 import type { ReactElement } from 'react';
 
